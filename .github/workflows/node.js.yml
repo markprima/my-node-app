@@ -22,7 +22,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        # Remove or modify the cache option
-    - run: npm ci
+    - name: Install dependencies
+      run: npm ci
+    - name: Cache node_modules
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
     - run: npm run build --if-present
     - run: npm test
