@@ -7,5 +7,9 @@
     "start": "node index.js"
   },
   "author": "Your Name",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markprima/my-node-app.git"
+  }
 }
