@@ -26,3 +26,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clean up
+      run: npm cache clean --force
